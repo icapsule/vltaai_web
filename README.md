@@ -28,6 +28,7 @@ This repository hosts the official landing page for **VLTA AI**, focusing on a s
 ├── index.html        # Main entry point & All-in-one architecture
 ├── README.md         # Documentation
 └── LICENSE           # MIT License
+```
 
 ## 🚀 Quick Start
 To run this project locally or deploy it to your edge infrastructure:
