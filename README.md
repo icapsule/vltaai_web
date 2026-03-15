@@ -28,3 +28,29 @@ This repository hosts the official landing page for **VLTA AI**, focusing on a s
 ├── index.html        # Main entry point & All-in-one architecture
 ├── README.md         # Documentation
 └── LICENSE           # MIT License
+
+🚀 Quick Start
+To run this project locally or deploy it to your edge infrastructure:
+
+Clone the repository
+git clone [https://github.com/icapsule/vltaai_web.git](https://github.com/icapsule/vltaai_web.git)
+
+Local Preview
+Simply open index.html in any modern web browser.
+
+Production Deployment
+Push changes to the main branch to trigger an automatic build on Cloudflare Pages.
+
+🔮 Roadmap
+[ ] Phase 1: Global deployment of cognitive landing interface (Completed)
+
+[ ] Phase 2: Integration of interactive neural-link visualizations
+
+[ ] Phase 3: Real-time AI performance monitoring dashboard
+
+[ ] Phase 4: Multi-node autonomous synchronization status
+
+✉️ Contact
+VLTA AI Technology Inquiries: hello@vltaai.com
+
+Official Website: www.vltaai.com
