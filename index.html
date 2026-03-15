@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLTA AI Technology | Intelligence Redefined</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #ffffff;
+            --dim: #888888;
+            --border: #1a1a1a;
+        }
+
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Section: Hero --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            color: var(--dim);
+            margin-bottom: 2rem;
+            animation: fadeIn 2s ease;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.2rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #434343 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--dim);
+            margin: 2rem 0;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.15); }
+
+        /* --- Section: Mission --- */
+        .mission {
+            padding: 160px 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: clamp(1.4rem, 4vw, 2.8rem);
+            font-weight: 200;
+            line-height: 1.3;
+            color: #ddd;
+        }
+
+        .highlight { font-weight: 700; color: #fff; }
+
+        /* --- Section: Tech Stack Marquee --- */
+        .tech-marquee {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .marquee-label {
+            text-align: center;
+            font-size: 0.65rem;
+            letter-spacing: 0.3rem;
+            color: #444;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+        }
+
+        .marquee-container { display: flex; overflow: hidden; position: relative; width: 100%; }
+
+        .marquee-track {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll 35s linear infinite;
+        }
+
+        .tech-item {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #222;
+            margin: 0 40px;
+            letter-spacing: -0.05rem;
+            transition: color 0.4s;
+        }
+
+        .tech-item:hover { color: #666; }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 100px 24px 60px;
+            border-top: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .f-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .f-logo h3 { margin: 0; font-weight: 500; font-size: 1.4rem; }
+        .f-logo p { margin: 0.5rem 0 0; color: var(--dim); font-size: 0.85rem; }
+        .f-link a { color: #fff; text-decoration: none; border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 0.85rem; }
+
+        .copyright {
+            margin-top: 80px;
+            font-size: 0.65rem;
+            color: #222;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .f-grid { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-label">Intelligence Redefined</div>
+        <h1>VLTA AI Technology</h1>
+        <p>Next-generation cognitive architectures designed for the autonomous era.</p>
+        <a href="mailto:hello@vltaai.com" class="btn">Explore Solutions</a>
+    </section>
+
+    <section class="mission">
+        <div class="mission-content">
+            "Building the <span class="highlight">cognitive infrastructure</span> that powers the next era of autonomous decision making."
+        </div>
+    </section>
+
+    <section class="tech-marquee">
+        <div class="marquee-label">Industry Standard Stack</div>
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <span class="tech-item">PYTORCH</span>
+                <span class="tech-item">NVIDIA CUDA</span>
+                <span class="tech-item">TENSORFLOW</span>
+                <span class="tech-item">HUGGING FACE</span>
+                <span class="tech-item">OPENAI</span>
+                <span class="tech-item">PYTHON</span>
+                <span class="tech-item">KUBERNETES</span>
+                <span class="tech-item">PYTORCH</span>
+                <span class="tech-item">NVIDIA CUDA</span>
+                <span class="tech-item">TENSORFLOW</span>
+                <span class="tech-item">HUGGING FACE</span>
+                <span class="tech-item">OPENAI</span>
+                <span class="tech-item">PYTHON</span>
+                <span class="tech-item">KUBERNETES</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-logo">
+                <h3>VLTA AI Technology</h3>
+                <p>Architecting the future of autonomy.</p>
+            </div>
+            <div class="f-link">
+                <a href="mailto:hello@vltaai.com">hello@vltaai.com</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 VLTA AI Technology. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
