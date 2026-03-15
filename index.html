@@ -6,225 +6,95 @@
     <title>VLTA AI Technology | Intelligence Redefined</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --dim: #888888;
-            --border: #1a1a1a;
-        }
+        :root { --bg: #000; --primary: #fff; --secondary: #888; --accent: #222; }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; cursor: crosshair; }
+        body, html { margin: 0; padding: 0; background: var(--bg); color: var(--primary); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        #canvas { position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
 
-        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; text-align: center; }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
+        .hero-label { font-size: 0.7rem; letter-spacing: 0.6rem; text-transform: uppercase; color: var(--secondary); margin-bottom: 2rem; opacity: 0.6; }
+        
+        h1 { font-size: clamp(2.5rem, 10vw, 6rem); font-weight: 900; margin: 0; letter-spacing: -0.3rem; line-height: 0.9; background: linear-gradient(180deg, #fff 30%, #444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- Section: Hero --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 24px;
-        }
+        .hero p { max-width: 600px; font-size: 1.1rem; color: var(--secondary); margin: 2.5rem 0; line-height: 1.6; font-weight: 300; }
 
-        .hero-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.5rem;
-            text-transform: uppercase;
-            color: var(--dim);
-            margin-bottom: 2rem;
-            animation: fadeIn 2s ease;
-        }
+        .btn { padding: 16px 40px; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.2rem; text-transform: uppercase; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); background: transparent; }
+        .btn:hover { background: var(--primary); color: var(--bg); box-shadow: 0 0 40px rgba(255,255,255,0.2); transform: translateY(-2px); }
 
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            font-weight: 800;
-            margin: 0;
-            letter-spacing: -0.2rem;
-            background: linear-gradient(180deg, #FFFFFF 0%, #434343 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        /* Tech Marquee */
+        .marquee { width: 100%; padding: 100px 0; border-top: 1px solid var(--accent); overflow: hidden; white-space: nowrap; }
+        .marquee-inner { display: inline-block; animation: scroll 40s linear infinite; }
+        .tech-tag { font-size: 1.5rem; font-weight: 700; color: #151515; margin: 0 50px; transition: color 0.3s; }
+        .tech-tag:hover { color: #333; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        .hero p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: var(--dim);
-            margin: 2rem 0;
-            max-width: 500px;
-            line-height: 1.6;
-        }
-
-        .btn {
-            padding: 14px 32px;
-            background: #fff;
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.15); }
-
-        /* --- Section: Mission --- */
-        .mission {
-            padding: 160px 24px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .mission-content {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: clamp(1.4rem, 4vw, 2.8rem);
-            font-weight: 200;
-            line-height: 1.3;
-            color: #ddd;
-        }
-
-        .highlight { font-weight: 700; color: #fff; }
-
-        /* --- Section: Tech Stack Marquee --- */
-        .tech-marquee {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-            overflow: hidden;
-        }
-
-        .marquee-label {
-            text-align: center;
-            font-size: 0.65rem;
-            letter-spacing: 0.3rem;
-            color: #444;
-            text-transform: uppercase;
-            margin-bottom: 4rem;
-        }
-
-        .marquee-container { display: flex; overflow: hidden; position: relative; width: 100%; }
-
-        .marquee-track {
-            display: flex;
-            white-space: nowrap;
-            animation: scroll 35s linear infinite;
-        }
-
-        .tech-item {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #222;
-            margin: 0 40px;
-            letter-spacing: -0.05rem;
-            transition: color 0.4s;
-        }
-
-        .tech-item:hover { color: #666; }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 100px 24px 60px;
-            border-top: 1px solid var(--border);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .f-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 3rem;
-        }
-
-        .f-logo h3 { margin: 0; font-weight: 500; font-size: 1.4rem; }
-        .f-logo p { margin: 0.5rem 0 0; color: var(--dim); font-size: 0.85rem; }
-        .f-link a { color: #fff; text-decoration: none; border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 0.85rem; }
-
-        .copyright {
-            margin-top: 80px;
-            font-size: 0.65rem;
-            color: #222;
-            letter-spacing: 0.1rem;
-            text-transform: uppercase;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .f-grid { flex-direction: column; align-items: flex-start; }
-        }
+        footer { padding: 60px 20px; border-top: 1px solid var(--accent); font-size: 0.7rem; color: #444; letter-spacing: 0.1rem; text-transform: uppercase; }
+        a { color: inherit; text-decoration: none; }
     </style>
 </head>
 <body>
 
+    <canvas id="canvas"></canvas>
+
     <section class="hero">
-        <div class="hero-label">Intelligence Redefined</div>
-        <h1>VLTA AI Technology</h1>
-        <p>Next-generation cognitive architectures designed for the autonomous era.</p>
-        <a href="mailto:hello@vltaai.com" class="btn">Explore Solutions</a>
+        <div class="hero-label">Autonomous Cognitive Era</div>
+        <h1>VLTA AI<br>TECHNOLOGY</h1>
+        <p>Architecting next-generation cognitive infrastructures for the autonomous world. Scalable, intelligent, and uncompromising.</p>
+        <a href="mailto:hello@vltaai.com" class="btn">Initiate Connection</a>
     </section>
 
-    <section class="mission">
-        <div class="mission-content">
-            "Building the <span class="highlight">cognitive infrastructure</span> that powers the next era of autonomous decision making."
+    <div class="marquee">
+        <div class="marquee-inner">
+            <span class="tech-tag">NEURAL-LINK</span><span class="tech-tag">PYTORCH</span><span class="tech-tag">NVIDIA CUDA</span><span class="tech-tag">TRANSFORMERS</span><span class="tech-tag">AUTONOMOUS AGENTS</span>
+            <span class="tech-tag">NEURAL-LINK</span><span class="tech-tag">PYTORCH</span><span class="tech-tag">NVIDIA CUDA</span><span class="tech-tag">TRANSFORMERS</span><span class="tech-tag">AUTONOMOUS AGENTS</span>
         </div>
-    </section>
-
-    <section class="tech-marquee">
-        <div class="marquee-label">Industry Standard Stack</div>
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <span class="tech-item">PYTORCH</span>
-                <span class="tech-item">NVIDIA CUDA</span>
-                <span class="tech-item">TENSORFLOW</span>
-                <span class="tech-item">HUGGING FACE</span>
-                <span class="tech-item">OPENAI</span>
-                <span class="tech-item">PYTHON</span>
-                <span class="tech-item">KUBERNETES</span>
-                <span class="tech-item">PYTORCH</span>
-                <span class="tech-item">NVIDIA CUDA</span>
-                <span class="tech-item">TENSORFLOW</span>
-                <span class="tech-item">HUGGING FACE</span>
-                <span class="tech-item">OPENAI</span>
-                <span class="tech-item">PYTHON</span>
-                <span class="tech-item">KUBERNETES</span>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <footer>
-        <div class="f-grid">
-            <div class="f-logo">
-                <h3>VLTA AI Technology</h3>
-                <p>Architecting the future of autonomy.</p>
-            </div>
-            <div class="f-link">
-                <a href="mailto:hello@vltaai.com">hello@vltaai.com</a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 VLTA AI Technology. All Rights Reserved.
-        </div>
+        &copy; 2026 VLTA AI Technology. Built with Vibe Coding. <a href="https://www.vltaai.com">WWW.VLTAAI.COM</a>
     </footer>
 
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            for (let i = 0; i < 100; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.5,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            particles.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
+    </script>
 </body>
 </html>
