@@ -1,7 +1,8 @@
 # 🚀 VLTA AI Technology
 > **Architecting the future of cognitive infrastructure.**
 
-[![Deployment](https://img.shields.io/badge/Deployed%20on-Cloudflare%20Pages-f38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.vltaai.com)
+[![Deployment](https://img.shields.io/badge/Deployment-Live-success?style=for-the-badge&logo=cloudflare&logoColor=white&color=f38020)](https://vltaai.com)
+[![CI/CD Pipeline](https://img.shields.io/badge/CI/CD-Automated-blue?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/icapsule/vltaai_web/actions)
 [![Vibe Coding](https://img.shields.io/badge/Vibe%20Coding-Enabled-000000?style=for-the-badge&logo=visual-studio-code&logoColor=white)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-white?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
